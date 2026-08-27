@@ -32,7 +32,26 @@ function sourceFromReferrer() {
   }
 }
 
+function sourceFromPath() {
+  const parts = window.location.pathname
+    .split("/")
+    .filter(Boolean)
+    .map(part => part.toLowerCase());
+
+  const knownSources = ["tiktok", "instagram", "facebook"];
+  const match = parts.find(part => knownSources.includes(part));
+
+  return match || null;
+}
+
 function getTrafficSource() {
+  const pathSource = sourceFromPath();
+
+  if (pathSource) {
+    sessionStorage.setItem("averik_source", pathSource);
+    return pathSource;
+  }
+
   const params = new URLSearchParams(window.location.search);
   const utmSource = normalizeSource(params.get("utm_source"));
 

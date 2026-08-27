@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f7f5f1;
+  --card: rgba(255, 255, 255, 0.78);
+  --text: #171717;
+  --muted: #77736d;
+  --line: rgba(23, 23, 23, 0.11);
+  --shadow: 0 18px 55px rgba(0, 0, 0, 0.06);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(255,255,255,.9), transparent 34%),
+    var(--bg);
+  color: var(--text);
+}
+
+.page-shell {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 38px 18px 28px;
+}
+
+.bio-card {
+  width: 100%;
+  max-width: 460px;
+  text-align: center;
+  padding: 18px 8px 8px;
+}
+
+.avatar-wrap {
+  width: 116px;
+  height: 116px;
+  margin: 0 auto 18px;
+  padding: 4px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.88);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.handle {
+  margin: 5px 0 18px;
+  color: var(--muted);
+  font-size: .96rem;
+}
+
+.bio {
+  margin: 0 auto 28px;
+  max-width: 320px;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.links {
+  display: grid;
+  gap: 12px;
+}
+
+.link-btn {
+  min-height: 58px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  text-decoration: none;
+  color: var(--text);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  font-weight: 600;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 22px rgba(0,0,0,.035);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.link-btn:hover {
+  transform: translateY(-2px);
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(0,0,0,.07);
+}
+
+.link-btn:active {
+  transform: scale(.985);
+}
+
+.arrow {
+  font-size: 1.1rem;
+  font-weight: 500;
+  opacity: .55;
+}
+
+.note {
+  margin: 22px 0 24px;
+  font-size: .82rem;
+  color: var(--muted);
+}
+
+footer {
+  padding: 8px 0 4px;
+  font-size: .76rem;
+  color: #9b968e;
+}
+
+@media (max-width: 420px) {
+  .page-shell {
+    padding-top: 26px;
+  }
+
+  .bio-card {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .link-btn {
+    border-radius: 16px;
+  }
+}
